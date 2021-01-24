@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/venue_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:textColor="@color/primary_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/primary_color"
+        tools:src="@drawable/ic_twotone_thumb_up_24"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/venue_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/venue_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/venue_icon"
+        app:layout_constraintTop_toTopOf="@id/venue_icon"
+        tools:text="Ce café est à la croisée des chemins.." />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

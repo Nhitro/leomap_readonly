@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/authentification_graph"
+    app:startDestination="@id/authentificationFragment">
+
+    <fragment
+        android:id="@+id/authentificationFragment"
+        android:name="com.leocare.app.ui.authent.page.ConnectionFragment"
+        android:label="authentification_fragment"
+        tools:layout="@layout/fragment_connection" />
+</navigation>

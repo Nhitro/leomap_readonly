@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/primary_color"
+        app:layout_constraintBottom_toTopOf="@id/venue_call"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/venue_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="30dp"
+        android:ellipsize="end"
+        android:maxLength="30"
+        android:maxLines="1"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Corner Café" />
+
+    <TextView
+        android:id="@+id/venue_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/venue_name"
+        app:layout_constraintTop_toBottomOf="@id/venue_name"
+        tools:text="Coffe Shop" />
+
+    <Button
+        android:id="@+id/venue_call"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:drawableTop="@drawable/ic_twotone_local_phone_24"
+        android:drawableTint="@color/primary_color"
+        android:text="@string/venue_detail_call_button"
+        android:textColor="@color/primary_color"
+        app:layout_constraintEnd_toStartOf="@id/venue_website"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/venue_type" />
+
+    <Button
+        android:id="@+id/venue_website"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_twotone_open_in_browser_24"
+        android:drawableTint="@color/primary_color"
+        android:text="@string/venue_detail_web_button"
+        android:textColor="@color/primary_color"
+        app:layout_constraintEnd_toStartOf="@id/venue_favorites"
+        app:layout_constraintStart_toEndOf="@id/venue_call"
+        app:layout_constraintTop_toTopOf="@id/venue_call" />
+
+    <Button
+        android:id="@+id/venue_favorites"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/ic_twotone_favorite_24"
+        android:text="@string/venue_detail_favorite_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/venue_website"
+        app:layout_constraintTop_toTopOf="@id/venue_call" />
+
+    <View
+        android:id="@+id/venue_buttons_separator"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/material_line_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/venue_call" />
+
+    <TextView
+        android:id="@+id/venue_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/venue_buttons_separator"
+        tools:text="Ce café est à la croisée des chemins.." />
+
+    <View
+        android:id="@+id/venue_description_separator"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/material_line_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/venue_description" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/venue_text_information_list"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/venue_description_separator"
+        tools:itemCount="6"
+        tools:listitem="@layout/holder_text_venue_line" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/venue_photos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="4dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/venue_text_information_list"
+        tools:itemCount="6"
+        tools:listitem="@layout/holder_photo_venue" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

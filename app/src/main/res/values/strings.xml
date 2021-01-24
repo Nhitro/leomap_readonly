@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Leomap</string>
+    <string name="mapbox_access_token">INSERT_YOUR_MAPBOX_KEY_HERE</string>
+    <string name="foursquare_client_id">INSERT_YOUR_FOURSQUARE_CLIENT_ID_HERE</string>
+    <string name="foursquare_client_secret">INSERT_YOUR_FOURSQUARE_CLIENT_SECRET_HERE</string>
+    <string name="content_description_request_location_button">Me géolocaliser</string>
+    <string name="location_granted_dialog_title">Merci de votre confiance !</string>
+    <string name="location_granted_dialog_message">Nous avons désormais accès à votre position. Vous pouvez pleinement de l\'application. Vous pouvez toujours désactiver ce privilège depuis les paramétrages.</string>
+    <string name="location_granted_dialog_button_label">OK !</string>
+    <string name="location_denied_dialog_title">Votre position restera secrète..</string>
+    <string name="location_denied_dialog_message">Nous comprenons et nous respectons votre intimité. Si jamais vous souhaitez changé d\'avis, il vous suffira de réappuyer sur le bouton. Bonne navigation !</string>
+    <string name="location_denied_dialog_button_label">Merci</string>
+    <string name="who_is_foursquare">Qui est Foursquare ?</string>
+    <string name="foursquare_connection_button">connexion via Foursquare</string>
+    <string name="foursquare_wikipedia_link">https://fr.wikipedia.org/wiki/Foursquare</string>
+    <string name="google_search_link"> https://www.google.com/search?q="%1$s"</string>
+    <string name="problem_occured_toast_title">Un problème est survenu</string>
+    <string name="foursquare_connection_failed_toast_message">La connexion à Foursquare a échoué</string>
+    <string name="no_foursquare_application_detected_toast_mesage">L\'application Foursquare n\'est pas installé</string>
+    <string name="rationale_permission_dialog_title">Demande d\'accès à la position</string>
+    <string name="rationale_permission_dialog_message">Pour pouvoir proposer les lieux près de chez vous, nous souhaiterions avoir accès à votre position.</string>
+    <string name="rationale_permission_dialog_negative_button_label">Non, merci</string>
+    <string name="connection_welcome_title">Bienvenue</string>
+    <string name="venue_detail_favorite_button">Favoris</string>
+    <string name="venue_detail_web_button">Site web</string>
+    <string name="venue_detail_call_button">Appeler</string>
+    <string name="venue_detail_no_description">Pas de description</string>
+</resources>

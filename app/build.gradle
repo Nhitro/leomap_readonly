@@ -1,0 +1,119 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id "androidx.navigation.safeargs.kotlin"
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.leocare.app"
+        minSdkVersion 26
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas")
+            }
+        }
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation project(':data')
+
+    // UI
+    implementation "androidx.core:core-ktx:$core_ktx_version"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_version"
+
+    // Used for permission requests
+    implementation "androidx.activity:activity-ktx:$activity_version"
+
+    // Used for location request
+    implementation "com.google.android.gms:play-services-location:$location_play_version"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+
+    //  Life cycle
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+    // DataStore
+    implementation "androidx.datastore:datastore-preferences:$datastore_version"
+    implementation "androidx.datastore:datastore-preferences-rxjava3:$datastore_version"
+
+    // Utils
+    implementation "com.kirich1409.viewbindingpropertydelegate:viewbindingpropertydelegate:$view_binding_property_delegate_version"
+
+    // Foursquare
+    implementation "com.foursquare:foursquare-android-oauth:$foursquare_oauth_version"
+
+    // Mapbox
+    implementation "com.mapbox.mapboxsdk:mapbox-android-sdk:$mapbox_version"
+    implementation "com.mapbox.mapboxsdk:mapbox-android-plugin-scalebar-v9:$mapbox_plugin_scalebar_version"
+    implementation "com.mapbox.mapboxsdk:mapbox-android-plugin-annotation-v9:$mapbox_plugin_annotation_version"
+
+    // Material
+    implementation "com.google.android.material:material:$material_version"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+
+    // MotionToast
+    implementation "com.github.Spikeysanju:MotionToast:$motion_toast_version"
+
+    // Hilt / Dependency injection
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+    // Hilt / View model
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_lifecycle_vm_version"
+    kapt "androidx.hilt:hilt-compiler:$hilt_lifecycle_vm_version"
+
+    // RxKotlin / Java / Android
+    implementation "io.reactivex.rxjava3:rxkotlin:$rxkotlin_version"
+    implementation "io.reactivex.rxjava3:rxjava:$rxjava_version"
+    implementation "io.reactivex.rxjava3:rxandroid:$rxandroid_version"
+
+    // Navigation graph
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+
+    // TEST
+    testImplementation "junit:junit:$junit_version"
+    androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
+    androidTestImplementation "androidx.test.ext:junit:$test_junit_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$test_espresso_core_version"
+}
